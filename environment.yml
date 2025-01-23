@@ -1,4 +1,4 @@
-name: timezone_flask
+name: timezone
 channels:
   - conda-forge
 dependencies:
