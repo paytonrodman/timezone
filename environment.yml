@@ -8,4 +8,3 @@ dependencies:
   - datetime
   - pytz
   - geocoders
-  - tzwhere
