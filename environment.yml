@@ -1,0 +1,11 @@
+name: timezone_flask
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - flask
+  - datetime
+  - pytz
+  - geocoders
+  - tzwhere

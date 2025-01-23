@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=devoce-width, initial-scale=1.0">
+  <title>Timezone Converter</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='timezone.css') }}"/>
+</head>
+<body>
+  <div class="site-container">
+    <h1 class="title">Meeting Time Converter</h1>
+    <form class="form" method="post" action="{{ url_for('result') }}" id="timezone_form">
+      <div class="form-row">
+        <div class="form-cell">
+          <label for="Time">Time to Convert:</label>
+          <input required type="time" name="Time" id="Time" required>
+        </div>
+        <div class="form-cell">
+          <label for="Date">Date:</label>
+          <input required type="date" name="Date" id="Date" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-cell">
+          <label for="From">From:</label>
+          <input required type="text" name="From" id="From" pattern="[A-Za-z]+, +[A-Za-z]{2}" placeholder="e.g. London, UK" required>
+        </div>
+        <div class="form-cell">
+          <label for="To">To:</label>
+          <input required type="text" name="To" id="To" pattern="[A-Za-z]+, +[A-Za-z]{2}" placeholder="e.g. London, UK" required>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-cell btn-group">
+          <input type="submit" value="Submit"/>
+          <input type="reset" value="Reset"/>
+        </div>
+      </div>
+    </form>
+  </div>
+  {% if success == True %}
+  <br/>
+  <p>Your original meeting time was {{FromTime}} on {{FromDate}} in {{FromLoc}} ({{FromTZ}}).</p>
+  <p>Your converted meeting time is {{ToTime}} on {{ToDate}} in {{ToLoc}} ({{ToTZ}}).</p>
+  {% endif %}
+  {% if success == False %}
+  <br/>
+  <p>{{error}}</p>
+  {% endif %}
+</body>
+
+</html>

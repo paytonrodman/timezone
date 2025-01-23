@@ -1,0 +1,240 @@
+
+:root {
+  --co-body-bg: #eee; /* off-white */
+  --co-body-text: #444; /* off-black */
+  --co-body-accent: #4834d4; /* blue */
+  --co-body-accent-contrast: #fff; /* white */
+  --co-textfld-bg: #fff; /* white */
+  --co-textfld-border: #ccc; /* grey */
+  --co-textfld-active-border: #aaa; /* grey */
+  --co-textfld-focus-border: var(--co-body-accent);
+  --co-textfld-valid-border: hsl(140 50% 75%);
+  --co-textfld-valid-active-border: hsl(140 50% 65%);
+  --co-textfld-valid-focus-border: hsl(140 50% 50%);
+  --co-btn-text: var(--co-body-accent-contrast);
+  --co-btn-bg: var(--co-body-accent);
+  --co-btn-active-bg: #333;
+  --co-btn-focus-bg: #333;
+}
+
+:root {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+body {
+  background-color: var(--co-body-bg);
+  color: var(--co-body-text);
+  font: 18px sans-serif;
+  margin: 40px;
+}
+
+:root {
+  --leading-inputs: 120%;
+  --padding-inputs: 0.75em;
+  --margin-label: 0.5em;
+  --margin-form-gap: 1.5em;
+  --margin-btn-gap: 1em;
+  --width-input-border: 2px;
+  --width-inputs: 250px;
+  --width-textarea: 450px;
+  --height-textarea: 250px;
+  --radius-inputs: 0.25em;
+  --opacity-input-disabled: 0.5;
+  --transition-duration-inputs: 250ms;
+  --transition-function-inputs: ease-in-out;
+  --transition-inputs: color var(--transition-duration-inputs),
+    background-color var(--transition-duration-inputs),
+    border-color var(--transition-duration-inputs)
+      var(--transition-function-inputs);
+}
+
+/* All elements regardless of types */
+input,
+select,
+option,
+textarea,
+button,
+datalist,
+fieldset,
+legend,
+optgroup,
+output {
+  font: inherit;
+  color: inherit;
+  accent-color: var(--co-body-accent);
+  transition: var(--transition-inputs);
+  line-height: var(--leading-inputs);
+}
+
+/* All elements with types */
+select,
+textarea,
+input[type=date],
+input[type=time],
+input[type=text],
+button,
+input[type=reset],
+input[type=submit] {
+  border: var(--width-input-border) solid var(--co-textfld-border);
+  padding: var(--padding-inputs);
+  border-radius: var(--radius-inputs);
+  background-color: var(--co-textfld-bg);
+}
+
+select:focus,
+textarea:focus,
+input[type=date]:focus,
+input[type=time]:focus,
+input[type=text]:focus,
+button:focus,
+input[type=reset]:focus,
+input[type=submit]:focus {
+  outline: 0;
+  border-color: var(--co-textfld-focus-border);
+}
+
+/* All text-fields x select */
+select,
+textarea,
+input[type=date],
+input[type=text],
+input[type=time] {
+  width: var(--width-inputs);
+  max-width: 100%;
+}
+
+
+select:hover,
+select:active,
+textarea:hover,
+textarea:active,
+input[type=date]:hover,
+input[type=date]:active,
+input[type=text]:hover,
+input[type=text]:active,
+input[type=time]:hover,
+input[type=time]:active,
+button:hover,
+button:active,
+input[type=date]:hover,
+input[type=date]:active,
+input[type=text]:hover,
+input[type=text]:active,
+input[type=time]:hover,
+input[type=time]:active {
+  border-color: var(--co-textfld-active-border);
+}
+
+select:required:hover,
+select:required:active,
+textarea:required:hover,
+textarea:required:active,
+input[type=date]:required:hover,
+input[type=date]:required:active,
+input[type=text]:required:hover,
+input[type=text]:required:active,
+input[type=time]:required:hover,
+input[type=time]:required:active {
+  border-color: var(--co-textfld-valid-active-border);
+}
+
+select:required:focus,
+textarea:required:focus,
+input[type=date]:required:focus,
+input[type=text]:required:focus,
+input[type=time]:required:focus {
+  border-color: var(--co-textfld-valid-focus-border);
+}
+
+select::selection,
+textarea::selection,
+input[type=date]::selection,
+input[type=text]::selection,
+input[type=time]::selection {
+  background-color: var(--co-body-accent);
+  color: var(--co-body-accent-contrast);
+}
+
+select:valid option:focus, select:valid option:active, select:valid option:hover, select:valid option:checked {
+  background-color: var(--co-textfld-bg);
+  color: var(--co-body-text);
+}
+
+button,
+input[type=reset],
+input[type=submit] {
+  border-color: var(--co-btn-bg);
+  background-color: var(--co-btn-bg);
+  color: var(--co-btn-text);
+  cursor: pointer;
+}
+
+button:hover, button:active,
+input[type=reset]:hover,
+input[type=reset]:active,
+input[type=submit]:hover,
+input[type=submit]:active {
+  background-color: var(--co-btn-active-bg);
+  border-color: var(--co-btn-active-bg);
+}
+
+button:focus,
+input[type=reset]:focus,
+input[type=submit]:focus {
+  background-color: var(--co-btn-active-bg);
+}
+
+/* textarea {
+  width: var(--width-textarea);
+  height: var(--height-textarea);
+} */
+
+/* Labels */
+/* label {
+  cursor: pointer;
+  display: block;
+}
+label + label, label + input, label + select, label + button, label + textarea {
+  margin-top: var(--margin-label);
+} */
+
+.button {
+  background-color: var(--co-body-accent); /* blue */
+  color: var(--co-body-accent-contrast);
+  border-radius: var(--radius-inputs);
+}
+
+.site-container {
+  padding: 1.5em;
+  max-width: 1160px;
+  margin: 3em auto;
+}
+
+.form-row {
+  gap: var(--margin-form-gap);
+}
+.form-row + .form-row {
+  margin-top: var(--margin-form-gap);
+}
+
+.btn-group {
+  gap: var(--margin-btn-gap);
+}
+
+.form-row,
+.btn-group {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.title {
+  margin-top: 0;
+  font-size: 2em;
+  color: #444;
+  font-family: Arial, Helvetica, sans-serif;
+}
