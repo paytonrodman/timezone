@@ -1,0 +1,8 @@
+python==3.10
+pip
+flask
+datetime
+time
+pytz
+timezonefinder
+geopy
